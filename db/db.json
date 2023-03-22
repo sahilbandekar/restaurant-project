@@ -5,6 +5,24 @@
       "email": "sahil@gmail.com",
       "password": "sahil@123",
       "id": 1
+    },
+    {
+      "name": "Anil Sindhu",
+      "email": "anilsindhu@gmail.com",
+      "password": "anil@123",
+      "id": 2
+    },
+    {
+      "name": "Peter",
+      "email": "peter@gmail.com",
+      "password": "peter@123",
+      "id": 3
+    },
+    {
+      "name": "Ram",
+      "email": "ram@gmail.com",
+      "password": "ram@123",
+      "id": 4
     }
   ]
 }
