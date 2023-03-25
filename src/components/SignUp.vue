@@ -34,11 +34,17 @@ export default {
                 password: this.password
             });
             if (result.status == 201){
-                localStorage.setItem("user-info", result.data)
+                localStorage.setItem("user-info", JSON.stringify(result.data))
                 this.$router.push({name: 'Home'})
             }
             // console.log(this.name, this.email, this.password)
             // console.warn(result)
+        }
+    },
+    mounted(){
+        let user = localStorage.getItem("user-info");
+        if (user) {
+            this.$router.push({name: 'Home'})
         }
     }
 }

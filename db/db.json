@@ -29,6 +29,18 @@
       "email": "Sandhya@gmail.com",
       "password": "sandhya@123",
       "id": 5
+    },
+    {
+      "name": "demo",
+      "email": "demo@gmail.com",
+      "password": "demo@123",
+      "id": 6
+    },
+    {
+      "name": "test",
+      "email": "test@gmail.com",
+      "password": "test@123",
+      "id": 7
     }
   ]
 }
