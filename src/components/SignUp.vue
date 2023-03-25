@@ -9,7 +9,8 @@
             <button @click="signUp">Sign Up</button>
             <div class="formFooter">
                 <p>Already have an account?</p>
-                <p>Login</p>
+                <p><RouterLink to="/login">Login</RouterLink></p>
+                
             </div>
         </div>
     </div>
@@ -33,6 +34,8 @@ export default {
                 email: this.email,
                 password: this.password
             });
+            
+            // If status is 201 then redirecting user to home page and storing value in localStorage
             if (result.status == 201){
                 localStorage.setItem("user-info", JSON.stringify(result.data))
                 this.$router.push({name: 'Home'})
@@ -41,6 +44,8 @@ export default {
             // console.warn(result)
         }
     },
+    // Checking if user is already loggedin or not by having a look at localstorage 
+    // if not pushing him back to home page after signup if he is trying to go back to signup 
     mounted(){
         let user = localStorage.getItem("user-info");
         if (user) {
