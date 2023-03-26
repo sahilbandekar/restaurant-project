@@ -1,6 +1,6 @@
 <template>
     <HeaDer />
-    <h1>Hello {{this.name}}, Welcome to Home Page</h1>
+    <h1>Hello User, Welcome to Add Restaurant Page</h1>
 </template>
 
 
@@ -9,20 +9,12 @@
 import HeaDer from './HeaDer.vue';
 
 export default {
-    name: 'HomeCmp',
-    data(){
-        return {
-            name: ''
-        }
-    },
+    name: 'AddRest',
     components: {
         HeaDer
     },
     mounted() {
         let user = localStorage.getItem("user-info");
-        // to show name 
-        this.name = JSON.parse(user).name
-
         if (!user) {
             this.$router.push({ name: 'SignUp' })
         }

@@ -1,21 +1,24 @@
 <template>
     <div class="nav">
-        <a href="#">Home</a>
-        <a href="#">Add Restaurant</a>
-        <a href="#">Update Restaurant</a>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/add">Add Restaurant</RouterLink>
+        <RouterLink to="/update">Update Restaurant</RouterLink>
         <a href="#" @click="logout">Logout</a>
     </div>
 </template>
 
 <script>
+import { RouterLink } from 'vue-router';
+
 export default {
-    name: 'HeaDer',
+    name: "HeaDer",
     methods: {
         logout() {
             localStorage.clear();
-            this.$router.push({ name: 'LogIn' })
+            this.$router.push({ name: "LogIn" });
         }
-    }
+    },
+    components: { RouterLink }
 }
 </script>
 
