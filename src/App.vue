@@ -37,7 +37,7 @@ body {
   border-radius: 12px;
 }
 
-.register input {
+.register input, .add input {
   width: 300px;
   height: 40px;
   padding-left: 20px;
@@ -48,7 +48,7 @@ body {
   border: 1px solid skyblue;
 }
 
-.register button {
+.register button, .add button {
   width: 320px;
   height: 40px;
   border: 1px solid skyblue;

@@ -43,18 +43,30 @@
       "id": 7
     }
   ],
-  "restaurants" : [
+  "restaurants": [
     {
       "id": 1,
       "name": "Burger King",
       "contact": 111,
-      "address" : "Noida"
+      "address": "Noida"
     },
     {
       "id": 2,
       "name": "Dominos",
       "contact": 222,
-      "address" : "Gurgoan"
+      "address": "Gurgoan"
+    },
+    {
+      "name": "Rasoi",
+      "contact": 333,
+      "address": "Nerul",
+      "id": 3
+    },
+    {
+      "name": "Starbucks",
+      "contact": "4444",
+      "address": "Delhi",
+      "id": 4
     }
   ]
 }
