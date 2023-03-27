@@ -42,5 +42,19 @@
       "password": "test@123",
       "id": 7
     }
+  ],
+  "restaurants" : [
+    {
+      "id": 1,
+      "name": "Burger King",
+      "contact": 111,
+      "address" : "Noida"
+    },
+    {
+      "id": 2,
+      "name": "Dominos",
+      "contact": 222,
+      "address" : "Gurgoan"
+    }
   ]
 }
