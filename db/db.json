@@ -67,6 +67,12 @@
       "contact": "4444",
       "address": "Delhi",
       "id": 4
+    },
+    {
+      "name": "KFC Restaurant",
+      "contact": "12345",
+      "address": "Gurgoan",
+      "id": 5
     }
   ]
 }

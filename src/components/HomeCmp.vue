@@ -7,12 +7,15 @@
             <td>Name</td>
             <td>Contact</td>
             <td>Address</td>
+            <td>Actions</td>
         </tr>
         <tr v-for="item in restaurants" :key="item.id">
             <td>{{ item.id }}</td>
             <td>{{ item.name }}</td>
             <td>{{ item.contact }}</td>
             <td>{{ item.address }}</td>
+            <td><RouterLink :to="'/update/'+item.id">Update</RouterLink></td>
+            
         </tr>
     </table>
 </template>
@@ -22,6 +25,7 @@
 
 import HeaDer from './HeaDer.vue';
 import axios from 'axios';
+import { RouterLink } from 'vue-router';
 
 export default {
     name: 'HomeCmp',
@@ -32,8 +36,9 @@ export default {
         }
     },
     components: {
-        HeaDer
-    },
+    HeaDer,
+    RouterLink
+},
     async mounted() {
         let user = localStorage.getItem("user-info");
         // to show name 
