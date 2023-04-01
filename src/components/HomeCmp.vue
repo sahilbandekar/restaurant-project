@@ -1,6 +1,6 @@
 <template>
     <HeaDer />
-    <h1>Hello {{this.name}}, Welcome to Home Page</h1>
+    <h1>Hello {{ this.name }}, Welcome to Home Page</h1>
     <table border="1">
         <tr>
             <td>Id</td>
@@ -14,8 +14,11 @@
             <td>{{ item.name }}</td>
             <td>{{ item.contact }}</td>
             <td>{{ item.address }}</td>
-            <td><RouterLink :to="'/update/'+item.id">Update</RouterLink></td>
-            
+            <td>
+                <RouterLink :to="'/update/' + item.id">Update</RouterLink>
+                <button @click="deleteRestaurant(item.id)">Delete</button>
+            </td>
+
         </tr>
     </table>
 </template>
@@ -29,41 +32,51 @@ import { RouterLink } from 'vue-router';
 
 export default {
     name: 'HomeCmp',
-    data(){
+    data() {
         return {
             name: '',
             restaurants: []
         }
     },
     components: {
-    HeaDer,
-    RouterLink
-},
-    async mounted() {
-        let user = localStorage.getItem("user-info");
-        // to show name 
-        this.name = JSON.parse(user).name
+        HeaDer,
+        RouterLink
+    },
 
-        if (!user) {
-            this.$router.push({ name: 'SignUp' })
+    methods: {
+        async deleteRestaurant(id) {
+            let result = await axios.delete('http://localhost:3000/restaurants/' + id);
+            if (result.status == 200) {
+                this.loadData()
+            }
+        },
+        async loadData() {
+            let user = localStorage.getItem("user-info");
+            // to show name 
+            this.name = JSON.parse(user).name
+            if (!user) {
+                this.$router.push({ name: 'SignUp' })
+            }
+
+            let result = await axios.get('http://localhost:3000/restaurants');
+            console.log(result)
+            this.restaurants = result.data;
         }
+    },
 
-
-        let result = await axios.get('http://localhost:3000/restaurants');
-        console.log(result)
-        this.restaurants = result.data;
-        
+    async mounted() {
+        this.loadData();
     }
 }
 </script>
 
 <style>
-
-td{
+td {
     width: 120px;
     height: 40px;
 }
-table{
+
+table {
     margin: 0 auto;
 }
 </style>
