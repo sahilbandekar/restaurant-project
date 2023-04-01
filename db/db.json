@@ -67,6 +67,12 @@
       "contact": "444",
       "address": "Delhi",
       "id": 4
+    },
+    {
+      "name": "Rasoi",
+      "contact": "632",
+      "address": "Nerul",
+      "id": 5
     }
   ]
 }
