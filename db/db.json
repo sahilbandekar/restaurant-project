@@ -64,13 +64,13 @@
     },
     {
       "name": "Starbucks",
-      "contact": "4444",
+      "contact": "444",
       "address": "Delhi",
       "id": 4
     },
     {
-      "name": "KFC Restaurant",
-      "contact": "12345",
+      "name": "KFC",
+      "contact": "555",
       "address": "Gurgoan",
       "id": 5
     }
