@@ -57,9 +57,8 @@ export default {
             if (!user) {
                 this.$router.push({ name: 'SignUp' })
             }
-
+            // Display Restaurants list
             let result = await axios.get('http://localhost:3000/restaurants');
-            console.log(result)
             this.restaurants = result.data;
         }
     },

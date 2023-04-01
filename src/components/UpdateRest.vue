@@ -2,13 +2,12 @@
     <HeaDer />
     <h1>Hello User, Welcome to Update Restaurant Page</h1>
     <form class="add">
-        <input type="text" name="name" placeholder="Enter Name" v-model="restaurant.name"/>
-        <input type="text" name="contact" placeholder="Enter Contact" v-model="restaurant.contact"/>
-        <input type="text" name="address" placeholder="Enter Address" v-model="restaurant.address"/>
+        <input type="text" name="name" placeholder="Enter Name" v-model="restaurant.name" />
+        <input type="text" name="contact" placeholder="Enter Contact" v-model="restaurant.contact" />
+        <input type="text" name="address" placeholder="Enter Address" v-model="restaurant.address" />
         <button type="button" @click="updateRestaurant">Update Restaurant</button>
     </form>
 </template>
-
 
 <script>
 
@@ -29,14 +28,14 @@ export default {
         }
     },
     methods: {
-        async updateRestaurant(){
-            const result = await axios.put('http://localhost:3000/restaurants/'+this.$route.params.id, {
+        async updateRestaurant() {
+            const result = await axios.put('http://localhost:3000/restaurants/' + this.$route.params.id, {
                 name: this.restaurant.name,
                 contact: this.restaurant.contact,
                 address: this.restaurant.address,
             });
 
-            if(result.status == 200){
+            if (result.status == 200) {
                 this.$router.push({ name: 'Home' })
             }
         }
@@ -48,7 +47,7 @@ export default {
         }
 
         // Fetching data from id & Prefilling data
-        const result = await axios.get('http://localhost:3000/restaurants/'+this.$route.params.id)
+        const result = await axios.get('http://localhost:3000/restaurants/' + this.$route.params.id)
         this.restaurant = result.data
     }
 }

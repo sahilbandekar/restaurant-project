@@ -33,7 +33,6 @@ export default {
             let result = await axios.get(
                 `http://localhost:3000/users?email=${this.email}&password=${this.password}`
             )
-            // console.warn(result)
             // If length of data is more than 0 and status is 200 then redirecting user to home page and storing value in localStorage
             if (result.status == 200 && result.data.length > 0) {
                 localStorage.setItem("user-info", JSON.stringify(result.data[0]))
